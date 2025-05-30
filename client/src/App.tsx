@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/home";
 import Favorites from "@/pages/favorites";
+import HistoryPage from "@/pages/history";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -12,6 +13,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/favorites" component={Favorites} />
+      <Route path="/history" component={HistoryPage} />
       <Route component={NotFound} />
     </Switch>
   );

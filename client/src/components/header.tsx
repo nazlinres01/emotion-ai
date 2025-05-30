@@ -18,9 +18,11 @@ export default function Header() {
             </div>
           </Link>
           <div className="flex items-center space-x-3">
-            <Button variant="ghost" size="icon" className="rounded-xl bg-gray-100 hover:bg-gray-200">
-              <History className="h-4 w-4 text-gray-600" />
-            </Button>
+            <Link href="/history">
+              <Button variant="ghost" size="icon" className="rounded-xl bg-gray-100 hover:bg-gray-200">
+                <History className="h-4 w-4 text-gray-600" />
+              </Button>
+            </Link>
             <Link href="/favorites">
               <Button variant="ghost" size="icon" className="rounded-xl bg-gray-100 hover:bg-gray-200">
                 <Heart className="h-4 w-4 text-gray-600" />

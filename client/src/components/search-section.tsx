@@ -47,7 +47,7 @@ export default function SearchSection({ onSearch, isLoading }: SearchSectionProp
           <button
             onClick={handleSearch}
             disabled={isLoading || !searchQuery.trim()}
-            className="absolute right-1 top-1/2 transform -translate-y-1/2 bg-purple-600 hover:bg-purple-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-4 py-2.5 rounded-xl transition-colors duration-200 font-medium text-sm"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-purple-600 disabled:text-gray-400 disabled:cursor-not-allowed transition-colors duration-200 font-medium text-sm flex items-center"
           >
             <Search className="w-4 h-4 mr-1" />
             Search

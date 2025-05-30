@@ -41,13 +41,14 @@ export default function SearchSection({ onSearch, isLoading }: SearchSectionProp
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             onKeyPress={handleKeyPress}
-            className="w-full px-6 py-4 text-lg rounded-2xl border-2 border-gray-200 focus:border-purple-400 focus:outline-none bg-white/80 backdrop-blur-sm shadow-lg transition-all duration-300"
+            className="w-full px-6 py-4 pr-28 text-lg rounded-2xl border-2 border-gray-200 focus:border-purple-400 focus:outline-none bg-white/80 backdrop-blur-sm shadow-lg transition-all duration-300"
             disabled={isLoading}
           />
           <Button
             onClick={handleSearch}
             disabled={isLoading || !searchQuery.trim()}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled:from-gray-400 disabled:to-gray-500 text-white px-4 py-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 font-medium text-sm"
+            className="absolute right-1 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled:from-gray-400 disabled:to-gray-500 text-white px-4 py-2.5 rounded-xl transition-all duration-200 font-medium text-sm border-0"
+            variant="default"
           >
             <Search className="w-4 h-4 mr-1" />
             Search

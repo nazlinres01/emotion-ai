@@ -11,20 +11,20 @@ export default function Footer() {
               <h4 className="text-lg font-bold text-gray-800">EmotionGIF</h4>
             </div>
             <p className="text-gray-600 text-sm">
-              Duygularını paylaşmanın en eğlenceli yolu. Mükemmel GIF'i bulmanın keyfini çıkar!
+              The most fun way to share your emotions. Enjoy finding the perfect GIF!
             </p>
           </div>
           <div>
-            <h5 className="font-semibold text-gray-800 mb-3">Hızlı Linkler</h5>
+            <h5 className="font-semibold text-gray-800 mb-3">Quick Links</h5>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><a href="#" className="hover:text-purple-600 transition-colors">Hakkımızda</a></li>
-              <li><a href="#" className="hover:text-purple-600 transition-colors">Gizlilik</a></li>
-              <li><a href="#" className="hover:text-purple-600 transition-colors">Kullanım Şartları</a></li>
-              <li><a href="#" className="hover:text-purple-600 transition-colors">İletişim</a></li>
+              <li><a href="#" className="hover:text-purple-600 transition-colors">About</a></li>
+              <li><a href="#" className="hover:text-purple-600 transition-colors">Privacy</a></li>
+              <li><a href="#" className="hover:text-purple-600 transition-colors">Terms of Service</a></li>
+              <li><a href="#" className="hover:text-purple-600 transition-colors">Contact</a></li>
             </ul>
           </div>
           <div>
-            <h5 className="font-semibold text-gray-800 mb-3">Sosyal Medya</h5>
+            <h5 className="font-semibold text-gray-800 mb-3">Social Media</h5>
             <div className="flex space-x-3">
               <button className="p-2 bg-gray-100 rounded-xl hover:bg-purple-100 transition-colors">
                 <span className="text-blue-400">🐦</span>
@@ -39,7 +39,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-200 mt-8 pt-4 text-center text-sm text-gray-500">
-          <p>© 2024 EmotionGIF. Tüm hakları saklıdır. GIPHY ile desteklenmektedir.</p>
+          <p>© 2024 EmotionGIF. All rights reserved. Powered by GIPHY.</p>
         </div>
       </div>
     </footer>

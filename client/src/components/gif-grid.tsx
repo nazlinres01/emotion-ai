@@ -74,15 +74,15 @@ export default function GifGrid({ gifs, selectedEmotion, isLoading, onLoadMore, 
         return newFavorites;
       });
       toast({
-        title: "Favorilerden kaldırıldı",
-        description: "GIF favorilerinizden kaldırıldı.",
+        title: "Removed from favorites",
+        description: "GIF removed from your favorites.",
       });
       queryClient.invalidateQueries({ queryKey: ['/api/favorites'] });
     },
     onError: () => {
       toast({
-        title: "Hata",
-        description: "GIF favorilerden kaldırılamadı. Lütfen tekrar deneyin.",
+        title: "Error",
+        description: "Could not remove GIF from favorites. Please try again.",
         variant: "destructive",
       });
     }
@@ -93,7 +93,7 @@ export default function GifGrid({ gifs, selectedEmotion, isLoading, onLoadMore, 
       try {
         await navigator.share({
           title: 'EmotionGIF',
-          text: `Bu GIF'i beğendim: ${gif.title}`,
+          text: `I liked this GIF: ${gif.title}`,
           url: gif.url
         });
       } catch (error) {
@@ -104,13 +104,13 @@ export default function GifGrid({ gifs, selectedEmotion, isLoading, onLoadMore, 
       try {
         await navigator.clipboard.writeText(gif.url);
         toast({
-          title: "Bağlantı kopyalandı!",
-          description: "GIF bağlantısı panoya kopyalandı.",
+          title: "Link copied!",
+          description: "GIF link copied to clipboard.",
         });
       } catch (error) {
         toast({
-          title: "Hata",
-          description: "Bağlantı kopyalanamadı.",
+          title: "Error",
+          description: "Could not copy link.",
           variant: "destructive",
         });
       }
@@ -139,13 +139,13 @@ export default function GifGrid({ gifs, selectedEmotion, isLoading, onLoadMore, 
       document.body.removeChild(a);
       
       toast({
-        title: "İndirme başlatıldı!",
-        description: "GIF indirilmeye başlandı.",
+        title: "Download started!",
+        description: "GIF download has begun.",
       });
     } catch (error) {
       toast({
-        title: "Hata",
-        description: "GIF indirilemedi. Lütfen tekrar deneyin.",
+        title: "Error",
+        description: "Could not download GIF. Please try again.",
         variant: "destructive",
       });
     }
@@ -263,12 +263,12 @@ export default function GifGrid({ gifs, selectedEmotion, isLoading, onLoadMore, 
             {isLoading ? (
               <>
                 <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                Yükleniyor...
+                Loading...
               </>
             ) : (
               <>
                 <span className="mr-2">+</span>
-                Daha Fazla GIF Yükle
+                Load More GIFs
               </>
             )}
           </Button>

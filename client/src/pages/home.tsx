@@ -110,11 +110,11 @@ export default function Home() {
         {/* Welcome Section */}
         <section className="text-center mb-12 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Duygunu Seç, <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">GIF'ini Bul</span>
+            Choose Your Emotion, <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Find Your GIF</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Hissettiğin duyguyu seç veya tarif et, sana mükemmel GIF'i bulalım! 
-            Duygularını paylaşmanın en eğlenceli yolu burada.
+            Select or describe how you're feeling, and we'll find the perfect GIF for you! 
+            The most fun way to express your emotions is here.
           </p>
         </section>
 
@@ -137,7 +137,7 @@ export default function Home() {
         {/* Recent Searches */}
         {recentSearches && recentSearches.length > 0 && (
           <section className="mt-16 mb-8">
-            <h3 className="text-xl font-bold text-gray-800 mb-4">Son Aramalar</h3>
+            <h3 className="text-xl font-bold text-gray-800 mb-4">Recent Searches</h3>
             <div className="flex flex-wrap gap-3">
               {recentSearches.slice(0, 8).map((search) => (
                 <Badge

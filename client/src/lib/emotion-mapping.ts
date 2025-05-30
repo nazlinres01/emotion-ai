@@ -45,42 +45,42 @@ export const predefinedEmotions = [
   {
     id: 'happy',
     emoji: '😊',
-    label: 'Mutlu',
+    label: 'Happy',
     keywords: 'happy excited joy celebration',
     gradient: 'from-yellow-400 to-orange-500'
   },
   {
     id: 'sad',
     emoji: '😢',
-    label: 'Üzgün',
+    label: 'Sad',
     keywords: 'sad crying disappointed',
     gradient: 'from-blue-400 to-indigo-600'
   },
   {
     id: 'excited',
     emoji: '🤩',
-    label: 'Heyecanlı',
+    label: 'Excited',
     keywords: 'excited thrilled enthusiastic',
     gradient: 'from-pink-400 to-purple-600'
   },
   {
     id: 'angry',
     emoji: '😠',
-    label: 'Kızgın',
+    label: 'Angry',
     keywords: 'angry mad frustrated',
     gradient: 'from-red-400 to-orange-600'
   },
   {
     id: 'calm',
     emoji: '😌',
-    label: 'Sakin',
+    label: 'Calm',
     keywords: 'calm peaceful relaxed',
     gradient: 'from-green-400 to-teal-600'
   },
   {
     id: 'surprised',
     emoji: '😲',
-    label: 'Şaşkın',
+    label: 'Surprised',
     keywords: 'surprised shocked amazed',
     gradient: 'from-yellow-300 to-amber-500'
   }

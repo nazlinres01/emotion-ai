@@ -14,7 +14,7 @@ export default function EmotionSelector({ onEmotionSelect, selectedEmotion, isLo
 
   return (
     <section className="mb-12">
-      <h3 className="text-2xl font-bold text-gray-800 text-center mb-8">Hızlı Duygu Seçimi</h3>
+      <h3 className="text-2xl font-bold text-gray-800 text-center mb-8">Quick Emotion Selection</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
         {predefinedEmotions.map((emotion) => (
           <Button

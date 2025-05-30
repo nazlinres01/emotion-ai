@@ -9,7 +9,7 @@ interface SearchSectionProps {
   isLoading: boolean;
 }
 
-const suggestionTags = ['mutlu', 'heyecanlı', 'kızgın', 'şaşkın', 'sakin', 'üzgün'];
+const suggestionTags = ['happy', 'excited', 'angry', 'surprised', 'calm', 'sad'];
 
 export default function SearchSection({ onSearch, isLoading }: SearchSectionProps) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -37,7 +37,7 @@ export default function SearchSection({ onSearch, isLoading }: SearchSectionProp
         <div className="relative">
           <Input
             type="text"
-            placeholder="Duygunu tarif et... (örn: çok mutluyum, kızgınım, heyecanlıyım)"
+            placeholder="Describe your emotion... (e.g: I'm so happy, excited, angry)"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             onKeyPress={handleKeyPress}
@@ -50,7 +50,7 @@ export default function SearchSection({ onSearch, isLoading }: SearchSectionProp
             className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105"
           >
             <Search className="w-4 h-4 mr-2" />
-            Ara
+            Search
           </Button>
         </div>
         <div className="mt-3 flex flex-wrap gap-2 justify-center">

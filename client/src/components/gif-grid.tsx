@@ -47,17 +47,17 @@ export default function GifGrid({ gifs, selectedEmotion, isLoading, onLoadMore, 
       });
     },
     onSuccess: (_, gif) => {
-      setFavorites(prev => new Set([...prev, gif.id]));
+      setFavorites(prev => new Set([...Array.from(prev), gif.id]));
       toast({
-        title: "Favorilere eklendi!",
-        description: "GIF favorilerinize başarıyla eklendi.",
+        title: "Added to favorites!",
+        description: "GIF successfully added to your favorites.",
       });
       queryClient.invalidateQueries({ queryKey: ['/api/favorites'] });
     },
     onError: () => {
       toast({
-        title: "Hata",
-        description: "GIF favorilere eklenemedi. Lütfen tekrar deneyin.",
+        title: "Error",
+        description: "Could not add GIF to favorites. Please try again.",
         variant: "destructive",
       });
     }
@@ -157,7 +157,7 @@ export default function GifGrid({ gifs, selectedEmotion, isLoading, onLoadMore, 
         <div className="text-center">
           <div className="inline-flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-lg">
             <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-purple-600"></div>
-            <span className="text-gray-700 font-medium">En iyi GIF'ler aranıyor...</span>
+            <span className="text-gray-700 font-medium">Finding the best GIFs...</span>
           </div>
         </div>
       </section>
@@ -168,8 +168,8 @@ export default function GifGrid({ gifs, selectedEmotion, isLoading, onLoadMore, 
     return (
       <section className="text-center py-12">
         <div className="text-6xl mb-4">🔍</div>
-        <h3 className="text-2xl font-bold text-gray-800 mb-2">Henüz arama yapılmadı</h3>
-        <p className="text-gray-600">Bir duygu seçin veya arama yapın!</p>
+        <h3 className="text-2xl font-bold text-gray-800 mb-2">No search performed yet</h3>
+        <p className="text-gray-600">Select an emotion or search for one!</p>
       </section>
     );
   }
@@ -178,7 +178,7 @@ export default function GifGrid({ gifs, selectedEmotion, isLoading, onLoadMore, 
     <section className="gif-results-section">
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-2xl font-bold text-gray-800">
-          {selectedEmotion ? `${selectedEmotion} GIF'leri` : 'GIF Sonuçları'}
+          {selectedEmotion ? `${selectedEmotion} GIFs` : 'GIF Results'}
         </h3>
         <div className="flex items-center space-x-2">
           <Button

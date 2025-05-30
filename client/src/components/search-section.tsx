@@ -47,9 +47,9 @@ export default function SearchSection({ onSearch, isLoading }: SearchSectionProp
           <Button
             onClick={handleSearch}
             disabled={isLoading || !searchQuery.trim()}
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105"
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 font-semibold border-2 border-white/20"
           >
-            <Search className="w-4 h-4 mr-2" />
+            <Search className="w-5 h-5 mr-2" />
             Search
           </Button>
         </div>

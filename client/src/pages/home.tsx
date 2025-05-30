@@ -49,6 +49,14 @@ export default function Home() {
 
   const { data: gifsData, isLoading: isLoadingGifs, refetch } = useQuery<GiphyResponse>({
     queryKey: ['/api/gifs/search', searchQuery, offset],
+    queryFn: () => {
+      const params = new URLSearchParams({
+        q: searchQuery,
+        limit: '20',
+        offset: offset.toString()
+      });
+      return fetch(`/api/gifs/search?${params}`).then(res => res.json());
+    },
     enabled: !!searchQuery,
   });
 

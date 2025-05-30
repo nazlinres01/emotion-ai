@@ -14,7 +14,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
 
       const searchTerm = q || emotion;
-      const apiKey = process.env.GIPHY_API_KEY || process.env.VITE_GIPHY_API_KEY || "GlVGYHkr3WSBnllca54iNt0yFbjz7L65";
+      const apiKey = process.env.GIPHY_API_KEY || "GlVGYHkr3WSBnllca54iNt0yFbjz7L65";
       
       const giphyUrl = new URL("https://api.giphy.com/v1/gifs/search");
       giphyUrl.searchParams.set("api_key", apiKey);
@@ -24,9 +24,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
       giphyUrl.searchParams.set("rating", "g");
       giphyUrl.searchParams.set("lang", "en");
 
+      console.log("Searching for:", searchTerm, "with API key:", apiKey.substring(0, 10) + "...");
+
       const response = await fetch(giphyUrl.toString());
       
       if (!response.ok) {
+        console.error(`GIPHY API error: ${response.status} - ${response.statusText}`);
         throw new Error(`GIPHY API error: ${response.status}`);
       }
 
@@ -45,7 +48,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Error fetching GIFs:", error);
       res.status(500).json({ 
-        message: "GIF'ler alınamadı. Lütfen tekrar deneyin.",
+        message: "Could not fetch GIFs. Please try again.",
         error: error instanceof Error ? error.message : "Unknown error"
       });
     }

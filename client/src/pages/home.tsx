@@ -139,12 +139,12 @@ export default function Home() {
           <section className="mt-16 mb-8">
             <h3 className="text-xl font-bold text-gray-800 mb-4">Son Aramalar</h3>
             <div className="flex flex-wrap gap-3">
-              {recentSearches.slice(0, 8).map((search: any) => (
+              {recentSearches.slice(0, 8).map((search) => (
                 <Badge
                   key={search.id}
                   variant="secondary"
                   className="px-4 py-2 bg-white/80 text-gray-700 rounded-xl hover:bg-purple-100 transition-colors text-sm border border-gray-200 cursor-pointer"
-                  onClick={() => handleRecentSearchClick(search.query || search.emotion)}
+                  onClick={() => handleRecentSearchClick(search.query || search.emotion || '')}
                 >
                   {search.query || search.emotion}
                 </Badge>

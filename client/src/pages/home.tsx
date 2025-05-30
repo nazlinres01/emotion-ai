@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import { useQuery } from "@tanstack/react-query";
 import Header from "@/components/header";
 import SearchSection from "@/components/search-section";
@@ -24,22 +24,39 @@ interface GifData {
   url: string;
 }
 
+interface GiphyResponse {
+  data: GifData[];
+  pagination: {
+    total_count: number;
+    count: number;
+    offset: number;
+  };
+}
+
+interface SearchData {
+  id: number;
+  query: string;
+  emotion: string | null;
+  userId: number | null;
+  createdAt: Date | null;
+}
+
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedEmotion, setSelectedEmotion] = useState<string | null>(null);
   const [offset, setOffset] = useState(0);
   const [allGifs, setAllGifs] = useState<GifData[]>([]);
 
-  const { data: gifsData, isLoading: isLoadingGifs, refetch } = useQuery({
+  const { data: gifsData, isLoading: isLoadingGifs, refetch } = useQuery<GiphyResponse>({
     queryKey: ['/api/gifs/search', searchQuery, offset],
     enabled: !!searchQuery,
   });
 
-  const { data: recentSearches } = useQuery({
+  const { data: recentSearches } = useQuery<SearchData[]>({
     queryKey: ['/api/searches/recent'],
   });
 
-  const { data: trendingGifs, isLoading: isLoadingTrending } = useQuery({
+  const { data: trendingGifs, isLoading: isLoadingTrending } = useQuery<GiphyResponse>({
     queryKey: ['/api/gifs/trending'],
     enabled: !searchQuery,
   });
@@ -83,7 +100,7 @@ export default function Home() {
 
   const displayGifs = searchQuery ? allGifs : (trendingGifs?.data || []);
   const isLoading = searchQuery ? isLoadingGifs : isLoadingTrending;
-  const hasMore = gifsData?.pagination?.total_count > allGifs.length;
+  const hasMore = gifsData?.pagination ? gifsData.pagination.total_count > allGifs.length : false;
 
   return (
     <div className="bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 min-h-screen font-inter">

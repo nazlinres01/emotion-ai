@@ -48,8 +48,10 @@ export class MemStorage implements IStorage {
   async createSearch(insertSearch: InsertSearch): Promise<Search> {
     const id = this.currentSearchId++;
     const search: Search = { 
-      ...insertSearch, 
       id, 
+      query: insertSearch.query,
+      emotion: insertSearch.emotion || null,
+      userId: insertSearch.userId || null,
       createdAt: new Date() 
     };
     this.searches.set(id, search);
@@ -70,8 +72,11 @@ export class MemStorage implements IStorage {
   async createFavorite(insertFavorite: InsertFavorite): Promise<Favorite> {
     const id = this.currentFavoriteId++;
     const favorite: Favorite = { 
-      ...insertFavorite, 
       id, 
+      gifId: insertFavorite.gifId,
+      gifUrl: insertFavorite.gifUrl,
+      title: insertFavorite.title || null,
+      userId: insertFavorite.userId || null,
       createdAt: new Date() 
     };
     this.favorites.set(id, favorite);

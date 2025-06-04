@@ -2,6 +2,10 @@
 
 An emotion-driven GIF recommendation app that helps users find the perfect animated content based on their current mood.
 
+
+![Resim7](https://github.com/user-attachments/assets/9f132dd8-98e3-4b89-aa47-ec6e7e7fb53d)
+
+
 ## Features
 
 - **Emotion Selection**: Choose from predefined emotions (happy, sad, excited, calm, etc.)
